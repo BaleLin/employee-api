@@ -39,9 +39,9 @@ public class EmployeeServiceTest {
         employeeService.addEmployees(employees);
         employeeService.addEmployees(employees2);
         employeeService.addEmployees(employees3);
-        assertThat(employeeService.getByGenderEmployees("male").contains(employees),is(false));
-        assertThat(employeeService.getByGenderEmployees("male").contains(employees2),is(false));
-        assertThat(employeeService.getByGenderEmployees("male").contains(employees3),is(true));
+        assertThat(employeeService.getByGenderEmployees().contains(employees),is(false));
+        assertThat(employeeService.getByGenderEmployees().contains(employees2),is(false));
+        assertThat(employeeService.getByGenderEmployees().contains(employees3),is(true));
     }
 
     @Test
@@ -51,6 +51,9 @@ public class EmployeeServiceTest {
         Employees employees2 = new Employees(2, "mike", 21, "female",5000);
         employeeService.addEmployees(employees);
         employeeService.addEmployees(employees2);
+        assertThat(employeeService.deleteEmployee(1).contains(employees),is(false));
 
     }
+
+
 }
