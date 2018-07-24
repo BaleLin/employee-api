@@ -11,8 +11,6 @@ import java.util.List;
 public class EmployeeService {
     private List<Employees> all = new ArrayList<>();
     public List<Employees> getAllEmployees(){
-        all.add(new Employees(1,"limi",24,"sds"));
-        all.add(new Employees(2,"limi",24,"sds"));
         return all;
     }
 
@@ -30,5 +28,15 @@ public class EmployeeService {
          all.add(employees);
         return all;
 
+    }
+
+    public List<Employees> updateEmployee(int id,Employees employees){
+        for(int i=0;i<all.size();i++){
+            if (all.get(i).getId()==id){
+                all.remove(new Employees(id));
+                all.add(employees);
+            }
+        }
+        return all;
     }
 }

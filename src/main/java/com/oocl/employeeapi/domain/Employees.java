@@ -1,4 +1,7 @@
 package com.oocl.employeeapi.domain;
+
+import java.util.Objects;
+
 public class Employees {
     private int id;
     private String name;
@@ -10,6 +13,10 @@ public class Employees {
         this.name = name;
         this.age = age;
         this.gender = gender;
+    }
+
+    public Employees(int id) {
+        this.id = id;
     }
 
     public Employees() {
@@ -45,5 +52,19 @@ public class Employees {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employees employees = (Employees) o;
+        return id == employees.id;
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id);
     }
 }

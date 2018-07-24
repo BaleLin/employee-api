@@ -25,4 +25,10 @@ public class EmployeesController {
 public List<Employees> addEmployee(@RequestBody Employees employees) {
      return employeeService.addEmployees(employees);
 }
+    @PutMapping(("/employees/{id}"))
+    public List<Employees> updateEmployee(@PathVariable Integer id, @RequestBody Employees employee) {
+
+        return employeeService.updateEmployee(id, employee);
+
+    }
 }
