@@ -21,13 +21,8 @@ public class EmployeesController {
     public Employees getByIdEmployees(@PathVariable int id){
         return employeeService.getByIdEmployees(id);
     }
-@PostMapping(path = "/employee")
-public List<Employees> addEmployee(@RequestBody Map<String ,Object> request) {
-    int id = (int) request.get("id");
-    String name= (String) request.get("name");
-    int age = (int) request.get("age");
-    String gender = (String) request.get("gender");
-    Employees employee = new Employees(id,name,age,gender);
-    return employeeService.addEmployees(employee);
+@PostMapping(path = "/employees")
+public List<Employees> addEmployee(@RequestBody Employees employees) {
+     return employeeService.addEmployees(employees);
 }
 }
