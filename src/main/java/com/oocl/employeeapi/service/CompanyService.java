@@ -21,6 +21,7 @@ public class CompanyService {
         companiesList.add(company);
         return companiesList;
     }
+    //查询指定的员工列表
     public List<Employees> getByNumberEmployeesList(int number){
         return companiesList.get(number-1).getEmployeesList();
 
