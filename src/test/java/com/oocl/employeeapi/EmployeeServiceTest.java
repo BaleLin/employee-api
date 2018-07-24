@@ -14,11 +14,6 @@ import static org.junit.Assert.assertThat;
 
 
 public class EmployeeServiceTest {
-
-    private List<Employees> employees = new ArrayList<>();
-
-
-
     @Test
     public void should_return_list_when_call_find_all_employee() {
         EmployeeService employeeService = new EmployeeService();
@@ -29,7 +24,17 @@ public class EmployeeServiceTest {
     public void should_return_update_list_when_call_update_employee() {
         EmployeeService employeeService = new EmployeeService();
         Employees employees = new Employees(1, "jason", 20, "female",6000);
-        Employees employees2 = new Employees(1, "jason", 20, "female",5000);
-        assertThat(employeeService.updateEmployee(1,employees2).contains(employees),is(false));
+        Employees newEmployees = new Employees(1, "jason", 20, "female",5000);
+        assertThat(employeeService.updateEmployee(1,newEmployees).contains(employees),is(false));
+    }
+
+    @Test
+    public void should_return_the_id_employee_list_when_give_a_id() {
+        EmployeeService employeeService = new EmployeeService();
+        Employees employees = new Employees(1, "jason", 20, "female",6000);
+        Employees employees2 = new Employees(2, "mike", 21, "female",5000);
+        employeeService.addEmployees(employees);
+        employeeService.addEmployees(employees2);
+        assertThat(employeeService.getByIdEmployees(1),is(employees));
     }
 }
