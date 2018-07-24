@@ -3,22 +3,22 @@ package com.oocl.employeeapi.domain;
 import java.util.List;
 
 public class Company {
-    private String name;
+    private String companyName;
     private int employeesNumber;
     List <Employees> employeesList;
 
-    public Company(String name, int employeesNumber, List<Employees> employeesList) {
-        this.name = name;
+    public Company(String companyName, int employeesNumber, List<Employees> employeesList) {
+        this.companyName = companyName;
         this.employeesNumber = employeesNumber;
         this.employeesList = employeesList;
     }
 
-    public String getName() {
-        return name;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     public int getEmployeesNumber() {

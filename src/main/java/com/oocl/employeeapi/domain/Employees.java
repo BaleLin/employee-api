@@ -7,19 +7,14 @@ public class Employees {
     private String name;
     private int age;
     private String gender;
+    private int salary;
 
-    public Employees(int id, String name, int age, String gender) {
+    public Employees(int id, String name, int age, String gender, int salary) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.gender = gender;
-    }
-
-    public Employees(int id) {
-        this.id = id;
-    }
-
-    public Employees() {
+        this.salary = salary;
     }
 
     public int getId() {
@@ -54,17 +49,11 @@ public class Employees {
         this.gender = gender;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Employees employees = (Employees) o;
-        return id == employees.id;
+    public int getSalary() {
+        return salary;
     }
 
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(id);
+    public void setSalary(int salary) {
+        this.salary = salary;
     }
 }
