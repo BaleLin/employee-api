@@ -54,6 +54,23 @@ public class EmployeeServiceTest {
         assertThat(employeeService.deleteEmployee(1).contains(employees),is(false));
 
     }
+    @Test
+    public void should_paging_the_employee_list_successful_when_give_a_2_2() {
+        EmployeeService employeeService = new EmployeeService();
+        Employees employees = new Employees(1, "jason", 20, "female",6000);
+        Employees employees2 = new Employees(2, "mike", 21, "female",5000);
+        Employees employees3 = new Employees(3, "sjason", 20, "female",6000);
+        Employees employees4 = new Employees(4, "smike", 21, "female",5000);
+        employeeService.addEmployees(employees);
+        employeeService.addEmployees(employees2);
+        employeeService.addEmployees(employees3);
+        employeeService.addEmployees(employees4);
+        assertThat(employeeService.getEmployeesByPage(2,2).contains(employees),is(false));
+        assertThat(employeeService.getEmployeesByPage(2,2).contains(employees2),is(false));
+        assertThat(employeeService.getEmployeesByPage(2,2).contains(employees3),is(true));
+        assertThat(employeeService.getEmployeesByPage(2,2).contains(employees4),is(true));
+
+    }
 
 
 }

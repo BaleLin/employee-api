@@ -45,5 +45,13 @@ public class EmployeeService {
         }
         return all;
     }
-
+    public List<Employees> getEmployeesByPage(int page, int pageSize) {
+        List<Employees> result = new ArrayList<>();
+        int start = (page-1)*pageSize;
+        int end = (start+pageSize)>all.size() ? all.size() : (start+pageSize);
+        for(int i=start;i<end;i++){
+            result.add(all.get(i));
+        }
+        return result;
+    }
 }
