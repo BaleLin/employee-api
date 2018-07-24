@@ -12,6 +12,9 @@ public class Employees {
         this.gender = gender;
     }
 
+    public Employees() {
+    }
+
     public int getId() {
         return id;
     }
