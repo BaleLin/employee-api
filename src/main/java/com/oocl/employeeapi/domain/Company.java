@@ -1,11 +1,16 @@
 package com.oocl.employeeapi.domain;
 
-import java.util.List;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+@Service
 public class Company {
     private String companyName;
     private int employeesNumber;
     List <Employees> employeesList;
+
+    public Company() {
+    }
 
     public Company(String companyName, int employeesNumber, List<Employees> employeesList) {
         this.companyName = companyName;

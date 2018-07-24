@@ -4,10 +4,7 @@ import com.oocl.employeeapi.domain.Company;
 import com.oocl.employeeapi.domain.Employees;
 import com.oocl.employeeapi.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,8 +18,18 @@ public class CompanyController {
        return companyService.getCompaniesList();
     }
 
+    @GetMapping("/companies/{number}/employees")
+    public List<Employees> getByNumberEmployeesList(@PathVariable int number){
+        return companyService.getByNumberEmployeesList(number);
+    }
     @PostMapping("/companies")
     public List<Company> addCompany(@RequestBody Company company){
         return companyService.addCompaniesList(company);
     }
+
+    @PutMapping("/companies/{number}")
+    public List<Company> updateCompany(@PathVariable int number,@RequestBody Company company){
+        return companyService.updateCompany(number,company);
+    }
+
 }
