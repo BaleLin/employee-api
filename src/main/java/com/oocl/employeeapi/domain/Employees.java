@@ -1,13 +1,18 @@
 package com.oocl.employeeapi.domain;
 
-import java.util.Objects;
+import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+@Service
 public class Employees {
     private int id;
     private String name;
     private int age;
     private String gender;
     private int salary;
+
+    public Employees() {
+    }
 
     public Employees(int id, String name, int age, String gender, int salary) {
         this.id = id;

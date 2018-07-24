@@ -24,10 +24,10 @@ public class EmployeesController {
 //        return employeeService.getByIdEmployees(id);
 //    }
 
-//    @PostMapping(path = "/employees")
-//    public List<Employees> addEmployee(@RequestBody Employees employees) {
-//        return employeeService.addEmployees(employees);
-//    }
+    @PostMapping(path = "/employees")
+    public List<Employees> addEmployee(@RequestBody Employees employees) {
+        return employeeService.addEmployees(employees);
+    }
 //    @PutMapping(("/employees/{id}"))
 //    public List<Employees> updateEmployee(@PathVariable Integer id, @RequestBody Employees employee) {
 //
