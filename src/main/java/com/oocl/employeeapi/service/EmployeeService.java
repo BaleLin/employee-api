@@ -17,14 +17,14 @@ public class EmployeeService {
     }
 
 
-//    public Employees getByIdEmployees(int id){
-//        for(int i=0;i<all.size();i++){
-//            if (all.get(i).getId()==id){
-//               return all.get(i);
-//            }
-//        }
-//        return new Employees();
-//    }
+    public Employees getByIdEmployees(int id){
+        for(int i=0;i<all.size();i++){
+            if (all.get(i).getId()==id){
+               return all.get(i);
+            }
+        }
+        return new Employees();
+    }
 
     public List<Employees> addEmployees( Employees employees){
          all.add(employees);
@@ -32,14 +32,14 @@ public class EmployeeService {
 
     }
 
-//    public List<Employees> updateEmployee(int id,Employees employees){
-//        for(int i=0;i<all.size();i++){
-//            if (all.get(i).getId()==id){
-//                all.set(i,new Employees(id,employees.getName(),employees.getAge(),employees.getGender()));
-//            }
-//        }
-//        return all;
-//    }
+    public List<Employees> updateEmployee(int id,Employees employees){
+        for(int i=0;i<all.size();i++){
+            if (all.get(i).getId()==id){
+                all.set(i,new Employees(id,employees.getName(),employees.getAge(),employees.getGender(),employees.getSalary()));
+            }
+        }
+        return all;
+    }
 //    public List<Employees> deleteEmployee(int id){
 //        for(int i=0;i<all.size();i++){
 //            if (all.get(i).getId()==id){

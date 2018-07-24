@@ -25,4 +25,11 @@ public class EmployeeServiceTest {
         Employees employees = new Employees(1, "jason", 20, "female",6000);
         assertThat(employeeService.addEmployees(employees).contains(employees),is(true));
     }
+    @Test
+    public void should_return_update_list_when_call_update_employee() {
+        EmployeeService employeeService = new EmployeeService();
+        Employees employees = new Employees(1, "jason", 20, "female",6000);
+        Employees employees2 = new Employees(1, "jason", 20, "female",5000);
+        assertThat(employeeService.updateEmployee(1,employees2).contains(employees),is(false));
+    }
 }

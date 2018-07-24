@@ -19,21 +19,21 @@ public class EmployeesController {
         return employeeService.getAllEmployees();
     }
 
-//    @GetMapping("/employees/{id}")
-//    public Employees getByIdEmployees(@PathVariable int id){
-//        return employeeService.getByIdEmployees(id);
-//    }
+    @GetMapping("/employees/{id}")
+    public Employees getByIdEmployees(@PathVariable int id){
+        return employeeService.getByIdEmployees(id);
+    }
 
     @PostMapping(path = "/employees")
     public List<Employees> addEmployee(@RequestBody Employees employees) {
         return employeeService.addEmployees(employees);
     }
-//    @PutMapping(("/employees/{id}"))
-//    public List<Employees> updateEmployee(@PathVariable Integer id, @RequestBody Employees employee) {
-//
-//        return employeeService.updateEmployee(id, employee);
-//
-//    }
+    @PutMapping(("/employees/{id}"))
+    public List<Employees> updateEmployee(@PathVariable Integer id, @RequestBody Employees employee) {
+
+        return employeeService.updateEmployee(id, employee);
+
+    }
 //    @DeleteMapping(("/employees/{id}"))
 //    public List<Employees> deleteEmployee(@PathVariable Integer id) {
 //
