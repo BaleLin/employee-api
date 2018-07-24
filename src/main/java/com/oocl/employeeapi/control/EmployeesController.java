@@ -21,6 +21,11 @@ public class EmployeesController {
     public Employees getByIdEmployees(@PathVariable int id){
         return employeeService.getByIdEmployees(id);
     }
+    @GetMapping("/employees/{name}")
+    public Employees getByIdEmployees(@PathVariable String name){
+
+        return new Employees(5,name,25,"aaa");
+    }
 @PostMapping(path = "/employees")
 public List<Employees> addEmployee(@RequestBody Employees employees) {
      return employeeService.addEmployees(employees);
