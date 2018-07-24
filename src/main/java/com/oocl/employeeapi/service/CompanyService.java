@@ -30,4 +30,8 @@ public class CompanyService {
        companiesList.set(number-1,company);
        return companiesList;
     }
+    public List<Company> deleteCompany(int number){
+        companiesList.remove(number-1);
+        return companiesList;
+    }
 }
