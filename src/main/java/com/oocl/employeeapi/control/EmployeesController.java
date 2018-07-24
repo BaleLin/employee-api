@@ -19,9 +19,9 @@ public class EmployeesController {
         return employeeService.getAllEmployees();
     }
 
-    @GetMapping("/employees/{id}")
-    public Employees getByIdEmployees(@PathVariable int id){
-        return employeeService.getByIdEmployees(id);
+    @GetMapping("/employees/male")
+    public List<Employees> getByGenderEmployees(){
+        return employeeService.getByGenderEmployees();
     }
 
     @PostMapping(path = "/employees")

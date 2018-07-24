@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class EmployeeService {
     private List<Employees> all = new ArrayList<>();
@@ -17,13 +19,8 @@ public class EmployeeService {
     }
 
 
-    public Employees getByIdEmployees(int id){
-        for(int i=0;i<all.size();i++){
-            if (all.get(i).getId()==id){
-               return all.get(i);
-            }
-        }
-        return new Employees();
+    public List<Employees> getByGenderEmployees(){
+        return all.stream().filter(employee -> employee.getGender() .equals("male") ).collect(Collectors.toList());
     }
 
     public List<Employees> addEmployees( Employees employees){
