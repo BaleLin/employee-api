@@ -3,6 +3,8 @@ package com.oocl.employeeapi.domain;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
+
 @Service
 public class Company {
     private String companyName;
@@ -40,5 +42,19 @@ public class Company {
 
     public void setEmployeesList(List<Employees> employeesList) {
         this.employeesList = employeesList;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Company company = (Company) o;
+        return Objects.equals(companyName, company.companyName);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(companyName);
     }
 }

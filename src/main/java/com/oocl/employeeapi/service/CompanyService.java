@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 @Service
 public class CompanyService {
-    List<Company> companiesList = new ArrayList<>();
+    public List<Company> companiesList = new ArrayList<>();
     List<Employees> employeesList = new ArrayList<>();
     public List<Company> getCompaniesList(){
         employeesList.add(new Employees(1,"lisi",24,"dasda",5000));
