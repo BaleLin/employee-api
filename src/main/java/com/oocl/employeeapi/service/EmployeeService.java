@@ -12,10 +12,12 @@ import java.util.stream.Collectors;
 @Service
 public class EmployeeService {
     private List<Employees> all = new ArrayList<>();
-
+    {
+        all.add(new Employees(1,"jkson",20,"male",5000));
+        all.add(new Employees(2,"mike",23,"female",5000));
+    }
     public List<Employees> getAllEmployees(){
-        all.add(new Employees(1,"lisis",20,"aa",5000));
-        return all;
+       return all;
     }
 
 
